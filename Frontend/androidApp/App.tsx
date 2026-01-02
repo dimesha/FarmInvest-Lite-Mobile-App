@@ -36,7 +36,33 @@ export default function App() {
     fetchInvestments();
   };
 
-  
+  const handleCreateInvestment = async (newInvestment: Omit<Investment, 'id' | 'created_at'>) => {
+    const tempId = Date.now();
+    const optimisticInvestment: Investment = {
+      ...newInvestment,
+      id: tempId,
+      created_at: new Date().toISOString(),
+    };
+    
+    setInvestments(prev => [optimisticInvestment, ...prev]);
+    setModalVisible(false);
+    
+    try {
+      const created = await api.createInvestment(newInvestment);
+      setInvestments(prev => 
+        prev.map(item => item.id === tempId ? created : item)
+      );
+      Alert.alert('Success', 'Investment created successfully!');
+    } catch (err) {
+      // Rollback on error
+      setInvestments(prev => prev.filter(item => item.id !== tempId));
+      Alert.alert(
+        'Error',
+        'Failed to create investment. Please try again.',
+        [{ text: 'OK', onPress: () => setModalVisible(true) }]
+      );
+    }
+  };
 
   if (loading && !refreshing) {
     return <LoadingErrorState type="loading" />;
@@ -73,7 +99,7 @@ export default function App() {
       <NewInvestmentModal
         visible={modalVisible}
         onClose={() => setModalVisible(false)}
-        onSubmit={() => ""}
+        onSubmit={handleCreateInvestment}
       />
     </SafeAreaView>
   );

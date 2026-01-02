@@ -9,5 +9,9 @@ export const api = {
     return response.data;
   },
   
+   async createInvestment(investment: NewInvestment): Promise<Investment> {
+    const response = await axios.post(`${BASE_URL}/api/investments`, investment);
+    return response.data;
+  }
  
 };
