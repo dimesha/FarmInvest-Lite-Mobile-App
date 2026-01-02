@@ -55,13 +55,13 @@ A full-stack React Native application with Express.js backend and MySQL database
 
 1. **Clone the repository**
 ```bash
-git clone <repository-url>
+git clone https://github.com/dimesha/FarmInvest-Lite-Mobile-App.git
 cd farminvest-lite
 ```
 
 2. **Set up the database**
 ```bash
-cd backend
+cd Backend
 mysql -u root -p < schema.sql
 mysql -u root -p < seed.sql
 ```
@@ -78,7 +78,8 @@ npm start
 
 4. **Configure mobile app**
 ```bash
-cd mobile
+cd Frontend
+cd androidApp
 npm install
 npm start
 ```
@@ -92,7 +93,7 @@ npm start
 
 ```
 farminvest-lite/
-├── mobile/                 # Expo React Native app
+├── Frontend/androidApp/                 # Expo React Native app
 │   ├── src/
 │   │   ├── components/    # Reusable UI components
 │   │   ├── services/      # API service layer
@@ -150,14 +151,15 @@ curl http://localhost:3000/api/investments
 ```bash
 curl -X POST http://localhost:3000/api/investments \
   -H "Content-Type: application/json" \
-  -d '{"farmer_name":"John Doe","amount":5000,"crop":"Corn"}'
+  -d '{"farmer_name":"Samadi","amount":5000,"crop":"Sweet Potato"}'
 ```
 
 ## 🧪 Testing
 
 ### Run Unit Tests
 ```bash
-cd mobile
+cd Frontend
+cd androidApp
 npm test
 ```
 
@@ -195,7 +197,7 @@ curl http://localhost:3000/api/investments
 
 ### Backend Development
 ```bash
-cd backend
+cd Backend
 npm install
 npm start          # Start server
 npm run dev       # Start with auto-reload
@@ -203,7 +205,8 @@ npm run dev       # Start with auto-reload
 
 ### Mobile Development
 ```bash
-cd mobile
+cd Frontend
+cd androidApp
 npm install
 npm start         # Start Expo dev server
 npm test          # Run tests
@@ -225,20 +228,6 @@ npm test          # Run tests
 
 ## 📄 License
 
-This project was created for interview assessment purposes.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📞 Support
-
-For support, check the troubleshooting section or open an issue in the repository.
-
----
+This project was created for interview assessment purposes by Dimesha Wijerathna.
 
 **Built with ❤️ for the mobile developer assessment**
