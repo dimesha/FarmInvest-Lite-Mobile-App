@@ -5,14 +5,37 @@ FarmInvest Lite is a small Expo App (single-screen + detail) that lists investme
 ## 📱 Mobile Investment Tracking App
 
 A full-stack React Native application with Express.js backend and MySQL database for tracking agricultural investments. Built as an assessment for an Associate Mobile Developer position.
-## Proof Screen Shots 
+## Proof Screen Shots
+<div align="center">
+  <h3>📱 App Screenshots - Step by Step</h3>
+  
+  <table>
+    <tr>
+      <td align="center"><strong>Step 1: Home Screen</strong></td>
+      <td align="center"><strong>Step 2: Create Investment</strong></td>
+      <td align="center"><strong>Step 3: Success View</strong></td>
+    </tr>
+    <tr>
+      <td><img src="./images/Display-all-investments.png" alt="Home Screen" width="200"></td>
+      <td><img src="./images/Add-new-investment.png" alt="Create Form" width="200"></td>
+      <td><img src="./images/validation.png" alt="Success View" width="200"></td>
+    </tr>
+    <tr>
+      <td>View all investments with pull-to-refresh</td>
+      <td>Fill out new investment form with validation</td>
+      <td>See optimistic update and successful creation</td>
+    </tr>
+  </table>
+  
+  <p><em>App workflow from viewing to creating investments</em></p>
+</div> 
 ![App Screenshot](./images/Add-new-investment.png)
 *Investment detailed cards and new investment modal*
 
-![API Diagram](./images/Display-all-investment.png)
+![New Investment Form](./images/Display-all-investments.png)
 *Investment listing with detailed cards *
 
-![API Diagram](./images/validation.png)
+![Error State](./images/validation.png)
 *Investment validation*
 
 ## ✨ Features
