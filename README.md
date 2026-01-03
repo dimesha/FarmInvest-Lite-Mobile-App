@@ -13,17 +13,17 @@ A full-stack React Native application with Express.js backend and MySQL database
     <tr>
       <td align="center"><strong>Step 1: Home Screen</strong></td>
       <td align="center"><strong>Step 2: Create Investment</strong></td>
-      <td align="center"><strong>Step 3: Success View</strong></td>
+      <td align="center"><strong>Step 3: Error State View</strong></td>
     </tr>
     <tr>
       <td><img src="./images/Display-all-invesments.png" alt="Home Screen" width="200"></td>
       <td><img src="./images/Add-new-investment.png" alt="Create Form" width="200"></td>
-      <td><img src="./images/validation.png" alt="Success View" width="200"></td>
+      <td><img src="./images/validation.png" alt="Error state View" width="200"></td>
     </tr>
     <tr>
       <td>View all investments with pull-to-refresh</td>
       <td>Fill out new investment form with validation</td>
-      <td>See optimistic update and successful creation</td>
+      <td>See optimistic error state</td>
     </tr>
   </table>
   
