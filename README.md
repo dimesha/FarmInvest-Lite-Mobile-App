@@ -92,8 +92,8 @@ cd androidApp
 npm install
 npm start
 ```
-# ⚠️ IMPORTANT: Android Emulator uses different localhost address
-# Use 10.0.2.2 for Android Studio emulator
+### ⚠️ IMPORTANT: Android Emulator uses different localhost address
+Use 10.0.2.2 for Android Studio emulator
 EXPO_PUBLIC_BACKEND_URL=http://10.0.2.2:3000
 
 
