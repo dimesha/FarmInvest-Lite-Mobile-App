@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView, StyleSheet, TouchableOpacity, Text, Alert, View } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { StyleSheet, TouchableOpacity, Text, Alert, View } from 'react-native';
 import { Investment } from './src/types/investment';
 import { api } from './src/services/api';
 import InvestmentList from './src/components/InvestmentList';
@@ -43,13 +44,13 @@ export default function App() {
       id: tempId,
       created_at: new Date().toISOString(),
     };
-    
+
     setInvestments(prev => [optimisticInvestment, ...prev]);
     setModalVisible(false);
-    
+
     try {
       const created = await api.createInvestment(newInvestment);
-      setInvestments(prev => 
+      setInvestments(prev =>
         prev.map(item => item.id === tempId ? created : item)
       );
       Alert.alert('Success', 'Investment created successfully!');
@@ -70,38 +71,40 @@ export default function App() {
 
   if (error && !refreshing && investments.length === 0) {
     return (
-      <LoadingErrorState 
-        type="error" 
-        message={error} 
-        onRetry={fetchInvestments} 
+      <LoadingErrorState
+        type="error"
+        message={error}
+        onRetry={fetchInvestments}
       />
     );
   }
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.appTitle}>FarmInvest Lite</Text>
-        <TouchableOpacity 
-          style={styles.addButton} 
-          onPress={() => setModalVisible(true)}
-        >
-          <Text style={styles.addButtonText}>+ New</Text>
-        </TouchableOpacity>
-      </View>
-      
-      <InvestmentList
-        investments={investments}
-        refreshing={refreshing}
-        onRefresh={handleRefresh}
-      />
-      
-      <NewInvestmentModal
-        visible={modalVisible}
-        onClose={() => setModalVisible(false)}
-        onSubmit={handleCreateInvestment}
-      />
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.header}>
+          <Text style={styles.appTitle}>FarmInvest Lite</Text>
+          <TouchableOpacity
+            style={styles.addButton}
+            onPress={() => setModalVisible(true)}
+          >
+            <Text style={styles.addButtonText}>+ New</Text>
+          </TouchableOpacity>
+        </View>
+
+        <InvestmentList
+          investments={investments}
+          refreshing={refreshing}
+          onRefresh={handleRefresh}
+        />
+
+        <NewInvestmentModal
+          visible={modalVisible}
+          onClose={() => setModalVisible(false)}
+          onSubmit={handleCreateInvestment}
+        />
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 

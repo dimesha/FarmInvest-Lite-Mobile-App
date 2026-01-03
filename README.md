@@ -5,6 +5,15 @@ FarmInvest Lite is a small Expo App (single-screen + detail) that lists investme
 ## 📱 Mobile Investment Tracking App
 
 A full-stack React Native application with Express.js backend and MySQL database for tracking agricultural investments. Built as an assessment for an Associate Mobile Developer position.
+## Proof Screen Shots 
+![App Screenshot](./images/add-new-investment.png)
+*Investment detailed cards and new investment modal*
+
+![API Diagram](./images/display-all-investment.png)
+*Investment listing with detailed cards *
+
+![API Diagram](./images/display-all-investment.png)
+*Investment validation*
 
 ## ✨ Features
 
@@ -83,6 +92,10 @@ cd androidApp
 npm install
 npm start
 ```
+# ⚠️ IMPORTANT: Android Emulator uses different localhost address
+# Use 10.0.2.2 for Android Studio emulator
+EXPO_PUBLIC_BACKEND_URL=http://10.0.2.2:3000
+
 
 5. **Run the app**
 - Install Expo Go on your mobile device

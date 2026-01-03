@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Investment, NewInvestment } from '../types/investment';
 
-const BASE_URL = process.env.EXPO_PUBLIC_BACKEND_URL || 'http://localhost:3000';
+const BASE_URL = 'http://192.168.8.112:3000';
 
 export const api = {
   async getInvestments(): Promise<Investment[]> {
