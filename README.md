@@ -16,7 +16,7 @@ A full-stack React Native application with Express.js backend and MySQL database
       <td align="center"><strong>Step 3: Success View</strong></td>
     </tr>
     <tr>
-      <td><img src="./images/Display-all-investments.png" alt="Home Screen" width="200"></td>
+      <td><img src="./images/Display-all-invesments.png" alt="Home Screen" width="200"></td>
       <td><img src="./images/Add-new-investment.png" alt="Create Form" width="200"></td>
       <td><img src="./images/validation.png" alt="Success View" width="200"></td>
     </tr>
@@ -29,14 +29,6 @@ A full-stack React Native application with Express.js backend and MySQL database
   
   <p><em>App workflow from viewing to creating investments</em></p>
 </div> 
-![App Screenshot](./images/Add-new-investment.png)
-*Investment detailed cards and new investment modal*
-
-![New Investment Form](./images/Display-all-investments.png)
-*Investment listing with detailed cards *
-
-![Error State](./images/validation.png)
-*Investment validation*
 
 ## ✨ Features
 
